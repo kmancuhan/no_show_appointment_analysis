@@ -17145,6 +17145,31 @@ Name: ahead, dtype: float64</pre>
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Analysis-Shortcomings-&amp;-Limitations">Analysis Shortcomings &amp; Limitations<a class="anchor-link" href="#Analysis-Shortcomings-&amp;-Limitations">&#182;</a></h3><ul>
+<li><p>Although the original dataset has 110527 examples, most of the data has incorrect entries in terms of the features <strong>scheduled_day</strong> and <strong>appointment_day</strong>. The <strong>scheduled_day</strong> should be after <strong>appointment_day</strong>. Moreover, the data has errant entries in other features. After cleaning the data from these mistakes, we end up with 38385 examples; so, more than half of the examples couldn't be included in our dataset.</p>
+</li>
+<li><p>As more than half of the examples couldn't be included in the dataset, this hurts the representative power of the sample. All the appointments and patients analyzed are squashed between April 2016 and June 2016, which is a very short time interval.</p>
+</li>
+<li><p>The data doesn't have missing values. The errant entries exist for a small number of examples for features <strong>age</strong> and <strong>handicap</strong>. Removing these examples wouldn't change significantly the analysis result. However, removing more than half of the data due to the incorrect <strong>scheduled_day</strong> and <strong>appointment_day</strong> entries affects the result a lot. Should these dates were correct and those examples were included, the analysis result would have been different; and, the sample would be more representative.</p>
+</li>
+<li><p>We compare patients who have no show appointments with patients who don't have no show appointments in terms of <strong>age</strong>, <strong>social_welfare</strong>, <strong>hypertension</strong>, <strong>alcoholism</strong>, <strong>diabetes</strong>, <strong>handicap</strong>. The analysis here doesn't include any statistical test to compare the categories in a statistically significant way. Hence, this is the limitation of the analysis.</p>
+</li>
+<li><p>Also, the analysis includes only the correlation between <strong>age</strong> and other categories among two groups of patients, show and no_show. There are some paradoxal results in terms of the comparison of these categories and their change over the patients. It is not possible to resolve these paradoxal observations without using confounding analysis or causal inference.</p>
+</li>
+<li><p>The analysis could be improved by including the statistical tests for the comparison of categories <strong>age</strong>, <strong>social_welfare</strong>, <strong>hypertension</strong>, <strong>alcoholism</strong>, <strong>diabetes</strong>, <strong>handicap</strong>. The causal inference could be used to resolve some paradoxal observations for <strong>alcoholism</strong> and <strong>handicap</strong>.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
