@@ -49,3 +49,4 @@ As long as you have the Jupyter Notebook with a python kernel and the necessary 
   - python==3.9.12
   - pandas==1.4.2
   - numpy==1.21.5
+  - matplotlib==3.5.1
